@@ -6,17 +6,18 @@ interface CounterOptionsState {
 }
 
 export const useCounterOptionsStore = defineStore("counterOptions", {
-  state: () =>
-    ({
+  state: () => {
+    return {
       count: 0,
       lastChanged: undefined
-    } as CounterOptionsState),
+    } as CounterOptionsState;
+  },
   getters: {
     squareCount: (state) => state.count * state.count
   },
   actions: {
     incrementBy(value: number) {
-      this.count += this.count + value;
+      this.count = this.count + value;
       this.lastChanged = new Date();
     },
     increment() {
