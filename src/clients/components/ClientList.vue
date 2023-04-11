@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import useClients from "@/clients/composables/useClients";
+import type { Client } from "@/clients/interfaces/client";
+
+interface Props {
+  clients: Client[]
+}
+
+const props = defineProps<Props>()
 
 const { isLoading, clients } = useClients();
 </script>
